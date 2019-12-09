@@ -9,9 +9,20 @@ public class Exchange {
 	@Id
 	@GeneratedValue
 	private Long id;
-	private String inputCurrency;
-	private String OutputCurrency;
-	private float rate;
+	private String originCurrency;
+	private String destinationCurrency;
+	private double exchangeRate;
+
+	public Exchange() {
+
+	}
+
+	public Exchange(String originCurrency, String destinationCurrency, double exchangeRate) {
+		super();
+		this.originCurrency = originCurrency;
+		this.destinationCurrency = destinationCurrency;
+		this.exchangeRate = exchangeRate;
+	}
 
 	public Long getId() {
 		return id;
@@ -21,28 +32,28 @@ public class Exchange {
 		this.id = id;
 	}
 
-	public String getInputCurrency() {
-		return inputCurrency;
+	public String getOriginCurrency() {
+		return originCurrency;
 	}
 
-	public void setInputCurrency(String inputCurrency) {
-		this.inputCurrency = inputCurrency;
+	public void setOriginCurrency(String originCurrency) {
+		this.originCurrency = originCurrency;
 	}
 
-	public String getOutputCurrency() {
-		return OutputCurrency;
+	public String getDestinationCurrency() {
+		return destinationCurrency;
 	}
 
-	public void setOutputCurrency(String outputCurrency) {
-		OutputCurrency = outputCurrency;
+	public void setDestinationCurrency(String destinationCurrency) {
+		this.destinationCurrency = destinationCurrency;
 	}
 
-	public float getRate() {
-		return rate;
+	public double getExchangeRate() {
+		return exchangeRate;
 	}
 
-	public void setRate(float rate) {
-		this.rate = rate;
+	public void setRate(double exchangeRate) {
+		this.exchangeRate = exchangeRate;
 	}
 
 }
