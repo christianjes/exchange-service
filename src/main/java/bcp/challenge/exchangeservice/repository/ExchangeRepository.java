@@ -7,7 +7,7 @@ import bcp.challenge.exchangeservice.model.Exchange;
 
 public interface ExchangeRepository extends JpaRepository<Exchange, Long> {
 
-	@Query(value = "SELECT * FROM Exchange e WHERE e.inputcurrency = ?1 AND e.outputcurrency= ?2", nativeQuery = true)
+	@Query(value = "SELECT * FROM Exchange e WHERE e.origincurrency = ?1 AND e.destinationcurrency= ?2", nativeQuery = true)
 	public Exchange findByInputCurrencyAndOutputCurrency(String inputCurrency, String outputCurrency);
 
 }
